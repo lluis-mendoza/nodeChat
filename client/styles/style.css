@@ -1,0 +1,23 @@
+
+body{
+    background: #111;
+    font-family: Consolas,  Courier, monospace;
+}
+
+#loading{
+    color: #411;
+    text-shadow: 0px 0px 15px #411;
+    font-size: 60px;
+    position: relative;
+    top: 50%;
+    text-align: center;
+}
+
+#loading-glow{
+    color: #f00;
+    text-shadow: 0px 0px 10px;
+}
+span {
+  display: inline-block;
+  padding: 0 10px;
+}
