@@ -6,7 +6,7 @@ const colors = require('colors');
 const app = express();
 const server = http.createServer(app);
 
-var PORT = 80;
+var PORT = 3000;
 
 const clientPath = `${__dirname}/../client`;
 console.log(`Serving static from ${clientPath}`);
