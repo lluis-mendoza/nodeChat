@@ -6,7 +6,6 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="./src/chat.js"></script>
     <title>Chat</title>
 </head>
 <body >
@@ -19,6 +18,19 @@
           <input id="chatBox" class="inputMessage" placeholder="Escribe aqui..."/>
         </li>
       </ul>
-    
+    <script>
+      var socket = io();
+      $('#chatBox').keypress(function(event){
+          var keycode = (event.keyCode ? event.keyCode : event.which);
+          if(keycode == '13'){
+              socket.emit('newmessage', {text: $('#chatBox').val(), timestamp: new Date()});  
+          }
+      });
+      socket.on('newmessage', (data) => {
+          console.log('Received!')
+          $('#messages').append($('<li>').text(data.timestamp + " | " + data.text));
+      })
+
+    </script>
 </body>
 </html>
